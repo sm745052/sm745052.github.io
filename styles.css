@@ -1,0 +1,330 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #faf8f4;
+  --text: #1a1a1a;
+  --muted: #5b5b5b;
+  --border: #dedede;
+  --link: #2b5a8c;
+  --serif: 'Source Serif 4', Georgia, Cambria, 'Times New Roman', Times, 'Noto Serif', serif;
+}
+
+body {
+  font-family: var(--serif);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* ── Site nav ── */
+.site-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.site-nav a {
+  padding: 7px 16px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text);
+  background: #f1ede2;
+  border: 1px solid #ddd5bf;
+  border-radius: 8px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.site-nav a:hover {
+  background: #e8ded9;
+  border-color: #c9bfa0;
+  text-decoration: none;
+}
+
+.site-nav a.active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+/* ── Header ── */
+header {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+.avatar {
+  flex: 0 0 auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #efefef;
+  border: 1px solid var(--border);
+}
+
+.avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  font-weight: 600;
+  color: #9a9a9a;
+  letter-spacing: -0.03em;
+}
+
+.header-text h1 {
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.role {
+  font-size: 18px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.bio {
+  font-size: 17.5px;
+  color: #2b2b2b;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.links {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.links a { margin-right: 2px; }
+.links .sep { margin: 0 8px; color: var(--border); }
+
+/* ── Section heading ── */
+.section-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 28px;
+}
+
+/* ── Updates ── */
+#updates { margin-bottom: 64px; }
+
+.updates-scroll-wrap { position: relative; }
+
+.updates-scroll {
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #ddd5bf transparent;
+}
+
+.updates-scroll::-webkit-scrollbar { width: 6px; }
+.updates-scroll::-webkit-scrollbar-track { background: transparent; }
+.updates-scroll::-webkit-scrollbar-thumb { background: #ddd5bf; border-radius: 3px; }
+.updates-scroll::-webkit-scrollbar-thumb:hover { background: #c9bfa0; }
+
+/* Fades the last bit of content into the page background to hint that the
+   list scrolls, instead of cutting items off with a hard edge. Only shown
+   when the list actually overflows (see the script at the bottom of the
+   page) — otherwise it would just dim the last item for no reason. */
+.updates-scroll-wrap.has-overflow::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 10px; bottom: 0;
+  height: 36px;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  pointer-events: none;
+}
+
+.updates-list { display: flex; flex-direction: column; gap: 14px; }
+
+.update-item { display: flex; align-items: center; gap: 14px; }
+
+.update-date { flex: 0 0 auto; }
+
+.update-text {
+  font-size: 15px;
+  color: #2b2b2b;
+}
+
+.update-text a { text-decoration: underline; }
+
+/* ── Publication / project entries ── */
+.entry-list { display: flex; flex-direction: column; gap: 34px; }
+
+.entry {
+  display: flex;
+  gap: 20px;
+}
+
+.entry-thumb {
+  flex: 0 0 150px;
+  width: 150px;
+  height: 108px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+}
+
+.entry-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.entry-body {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  padding-right: 60px;
+}
+
+/* Shared date typography — small caps, no box or fill, so it reads as a
+   refined caption rather than a UI badge. Used by Updates, the Research
+   list, and the Blog list so every date on the site matches. */
+.entry-date, .blog-date, .update-date {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* On the Research/Blog rows the date sits at the top-right corner. */
+.entry-date, .blog-date {
+  position: absolute;
+  top: 2px;
+  right: 0;
+}
+
+.update-date { flex: 0 0 64px; }
+
+.entry-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+.entry-authors {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.entry-authors b { color: var(--text); }
+
+.entry-venue {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.entry-desc {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+
+.entry-links { font-size: 13px; }
+.entry-links .sep { margin: 0 6px; color: var(--border); }
+
+/* ── Blog list ── */
+.blog-list { display: flex; flex-direction: column; gap: 22px; }
+
+.blog-entry {
+  display: block;
+  position: relative;
+  padding-right: 60px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.blog-entry:last-child { border-bottom: none; padding-bottom: 0; }
+
+.blog-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.blog-entry:hover .blog-title { text-decoration: underline; }
+
+.blog-excerpt {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.blog-empty {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* ── Blog post article ── */
+.post-date {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.post-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 28px;
+}
+
+.post-article p { font-size: 16.5px; color: #2b2b2b; margin-bottom: 20px; line-height: 1.7; }
+.post-article h2 { font-size: 21px; font-weight: 700; margin: 36px 0 14px; }
+.post-article a { text-decoration: underline; }
+.post-article ul, .post-article ol { margin: 0 0 20px 22px; }
+.post-article li { margin-bottom: 8px; font-size: 16.5px; color: #2b2b2b; }
+.post-article code { background: #f0ede6; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+.post-article pre { background: #f0ede6; padding: 14px 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 20px; }
+.post-article blockquote { border-left: 3px solid var(--border); padding-left: 16px; color: var(--muted); margin-bottom: 20px; }
+.post-article img { max-width: 100%; border-radius: 4px; margin-bottom: 20px; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+  main { padding: 32px 18px 60px; }
+  header { flex-direction: column; gap: 18px; margin-bottom: 40px; }
+  .avatar { width: 96px; height: 96px; }
+  .entry { flex-direction: column; }
+  .entry-thumb { width: 100%; height: 160px; }
+  .entry-body { padding-right: 0; padding-top: 30px; }
+  .blog-entry { padding-right: 0; padding-top: 30px; }
+  .entry-date, .blog-date { top: -4px; right: auto; left: 0; }
+}
