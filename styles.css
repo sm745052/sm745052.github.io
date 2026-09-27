@@ -274,7 +274,7 @@ header {
   flex: 1;
   min-width: 0;
   position: relative;
-  padding-right: 60px;
+  padding-right: 90px;
 }
 
 /* Shared date typography — small caps, no box or fill, so it reads as a
@@ -337,7 +337,7 @@ header {
 .blog-entry {
   display: block;
   position: relative;
-  padding-right: 60px;
+  padding-right: 90px;
   padding-bottom: 18px;
   border-bottom: 1px solid var(--border);
 }
