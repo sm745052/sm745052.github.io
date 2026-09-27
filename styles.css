@@ -119,6 +119,12 @@ header {
 .links a { margin-right: 2px; }
 .links .sep { margin: 0 8px; color: var(--border); }
 
+.email {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
 /* ── Featured blog post (home page highlight) ── */
 .featured-post {
   display: block;
