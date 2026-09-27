@@ -168,6 +168,44 @@ header {
 
 .featured-post:hover .featured-cta { text-decoration: underline; }
 
+/* ── Research interests ── */
+#interests { margin-bottom: 64px; }
+
+.interest-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.interest-name {
+  font-size: 16.5px;
+  font-weight: 700;
+}
+
+.interest-tag {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 1px 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--link);
+  border: 1px solid var(--link);
+  border-radius: 999px;
+  vertical-align: 2px;
+}
+
+.interest-desc {
+  display: block;
+  font-size: 14.5px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.interest-desc a { text-decoration: underline; }
+
 /* ── Section heading ── */
 .section-title {
   font-size: 15px;
