@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
 
@@ -28,14 +28,16 @@
       <h1>Sandeep Mishra</h1>
       <p class="role">Software Engineer, Google &nbsp;&middot;&nbsp; IIT Kharagpur &rsquo;25</p>
       <p class="bio">
-        I'm interested in how language models reason, especially in latent space, efficient
-        inference for large models, and vision-language models. At Google, I build large-scale data
-        pipelines. My first-author work on vision-language auto-completion appeared at EACL 2026.
+        I study how language models spend computation, especially whether they can reason in
+        continuous latent space instead of through tokens. My earlier work on adaptive inference
+        appeared at EACL 2026, covering dynamic routing between vision-language models and
+        entropy-based early stopping.
         <b>I am applying to PhD programs for Fall 2027.</b>
       </p>
       <p class="links">
         <a href="mailto:sandeepmishraismyname@gmail.com">Email</a><span class="sep">/</span><a href="https://github.com/sm745052" target="_blank" rel="noopener">GitHub</a><span class="sep">/</span><a href="https://drive.google.com/file/d/1n59Xc3Lst71nPMHc8rOr9VYkeNOyxXiO/view?usp=sharing" target="_blank" rel="noopener">CV</a>
       </p>
+      <p class="email">sandeepmishraismyname [at] gmail [dot] com</p>
     </div>
   </header>
 
@@ -44,17 +46,31 @@
     <ul class="interest-list">
       <li>
         <span class="interest-name">Latent reasoning</span>
-        <span class="interest-desc">How language models can reason in continuous latent space rather than through tokens, and what their internal representations reveal about that reasoning.</span>
+        <span class="interest-desc">Can language models reason in continuous latent space instead of through tokens, and what do their internal representations reveal about that reasoning?</span>
       </li>
       <li>
-        <span class="interest-name">Efficient LLM inference and adaptation</span>
-        <span class="interest-desc">Dynamic routing, early stopping, and parameter-efficient fine-tuning to make large models practical.</span>
+        <span class="interest-name">Adaptive and efficient inference</span>
+        <span class="interest-desc">How can a model spend compute only where it is needed, through routing, early exit, or latent computation instead of longer chains of thought?</span>
       </li>
       <li>
         <span class="interest-name">Multimodal and vision-language models</span>
-        <span class="interest-desc">Grounding language in images, with a focus on interactive tasks like visually-grounded dialog.</span>
+        <span class="interest-desc">How can language models ground their reasoning in images, especially in interactive settings like visually-grounded dialog?</span>
       </li>
     </ul>
+  </section>
+
+  <section id="updates">
+    <p class="section-title">News</p>
+    <div class="updates-list">
+      <div class="update-item">
+        <span class="update-date">Mar 2026</span>
+        <span class="update-text">Two papers at EACL 2026: <a href="https://aclanthology.org/2026.eacl-industry.11/" target="_blank" rel="noopener">Router-Suggest</a> in the Industry Track and <a href="https://aclanthology.org/2026.eacl-long.209/" target="_blank" rel="noopener">Chat-Ghosting</a> in the Main Conference.</span>
+      </div>
+      <div class="update-item">
+        <span class="update-date">2025</span>
+        <span class="update-text">Graduated from IIT Kharagpur.</span>
+      </div>
+    </div>
   </section>
 
   <section id="publications">
