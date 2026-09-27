@@ -119,6 +119,55 @@ header {
 .links a { margin-right: 2px; }
 .links .sep { margin: 0 8px; color: var(--border); }
 
+/* ── Featured blog post (home page highlight) ── */
+.featured-post {
+  display: block;
+  margin: -24px 0 56px;
+  padding: 20px 24px;
+  background: #f1ede2;
+  border: 1px solid #ddd5bf;
+  border-left: 4px solid var(--link);
+  border-radius: 8px;
+  color: var(--text);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.featured-post:hover {
+  background: #ebe5d6;
+  text-decoration: none;
+}
+
+.featured-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--link);
+  margin-bottom: 6px;
+}
+
+.featured-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.featured-excerpt {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.featured-cta {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--link);
+}
+
+.featured-post:hover .featured-cta { text-decoration: underline; }
+
 /* ── Section heading ── */
 .section-title {
   font-size: 15px;
